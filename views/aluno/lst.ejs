@@ -1,5 +1,6 @@
 <%-include('../cabecalho.ejs')%>
     <h1>Aluno</h1>
+    <a href="/aluno/add">Adicionar aluno</a>
     <table>
         <tr>
             <td>Nome</td>
@@ -7,13 +8,14 @@
             <td>Ações</td>
         </tr>
         <!--aqui vamos fazer o for-->
-        <%Alunos.forEach(function(aluno){%>
+        <%for (const{nome, id, matricula} of Alunos) {%>
         <tr>
-            <td><%aluno.nome%></td>
-            <td><%aluno.matricula%></td>
+            <td><%=nome%></td>
+            <td><%=matricula%></td>
+            <td><a href="/aluno/edt/<%=id%>">Editar aluno</a></td>
             <td></td>
         </tr>
-        <%})%>
+        <%}%>
     </table>
     
 <%-include('../rodape.ejs')%>

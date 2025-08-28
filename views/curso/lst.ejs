@@ -1,0 +1,25 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Curso</h1>
+    <a href="/curso/add">Adicionar curso</a>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Duração</td>
+            <td>Área</td>
+            <td>Nível</td>
+            <td>Ano de Fundação</td>
+        </tr>
+        <!--aqui vamos fazer o for-->
+        <%for (const{nome, duracao, area, nivel, anoFundacao} of Cursos) {%>
+        <tr>
+            <td><%=nome%></td>
+            <td><%=duracao%></td>
+            <td><%=area%></td>
+            <td><%=nivel%></td>
+            <td><%=anoFundacao%></td>
+            <td></td>
+        </tr>
+        <%}%>
+    </table>
+    
+<%-include('../rodape.ejs')%>
